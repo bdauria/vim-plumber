@@ -33,11 +33,11 @@ endfunction
 
 function! s:CommandForTestFile(file)
   if a:file =~# '_spec.rb$'
-    return "rspec " . a:file
+    return "bundle rspec " . a:file
   elseif a:file =~# '_test.rb$'
     return "ruby -Itest " . a:file
   elseif a:file =~# '.feature$'
-    return "cucumber " . a:file
+    return "bundle cucumber " . a:file
   elseif a:file =~# '_test.js$'
     return "mocha " . a:file
   elseif len(a:file) ># 0
